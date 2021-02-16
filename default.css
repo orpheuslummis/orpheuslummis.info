@@ -1,0 +1,81 @@
+body {
+    font-family: 'Linux Libertine','Georgia','Times',serif;
+	max-width: 42rem;
+	margin: 1rem auto 1rem auto;
+    font-size: 1.05rem;
+    padding: 0 .75rem;
+    line-height: 1.4;
+}
+
+a {
+    color: #813001;
+}
+
+h1,h2,h3 {
+    font-weight: normal;
+    /* margin-block-end: .65rem; */
+}
+
+h1 {
+    font-size: 1.85rem;
+    margin-block-end: .65rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+.meta {
+    font-style: italic;
+    font-size: .95rem;
+    color: rgb(68, 68, 68);
+}
+
+li {
+    margin: .2rem 0 .2rem 0;
+}
+
+@media (max-width: 31rem) {
+    body {
+        font-size: 0.95rem;
+    }
+    .meta {
+        font-size: 0.85rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background: rgb(30,30,30);
+        color:  #ddd;
+    }
+    a {
+        color: rgb(198, 140, 116);
+    }
+    .meta {
+        color:  rgba(221, 221, 221, 0.6);
+    }
+    code {
+        background-color: #000a15;
+    }
+}
+
+/* TBD */
+@media print {
+    body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+    }
+    p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2, h3, h4 {
+        page-break-after: avoid;
+    }
+}
