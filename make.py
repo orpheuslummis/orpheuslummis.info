@@ -31,7 +31,6 @@ PORT = 8765
 WATCH_INTERVAL = 1.0
 
 class Builder(object):
-
     def __call__(self) -> None:
         self.local_serve(continuous=True)
 

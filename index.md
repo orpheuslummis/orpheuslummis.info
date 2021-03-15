@@ -7,4 +7,6 @@ last-update: 2020-10
 
 Email: [o@orpheuslummis.info](mailto:o@orpheuslummis.info)
 
+Matrix: @orpheuslummis:matrix.org
+
 Signal: +18192727860
