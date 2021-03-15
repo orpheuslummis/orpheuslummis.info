@@ -25,10 +25,11 @@ import pypandoc # requires pandoc in path
 
 AWS_BUCKET = 'orpheuslummis.info'
 AWS_DISTRIBUTION = 'E231Q4SGKH5GRS'
-BUILD_DIR = './_build'
+BUILD_DIR = './docs' # for github pages
 HOST = 'localhost'
 PORT = 8765
 WATCH_INTERVAL = 1.0
+INDEX_FNAME = '_index.md'
 
 class Builder(object):
     def __call__(self) -> None:
@@ -69,7 +70,7 @@ class Builder(object):
 
         # compute current phashes
         files = glob.glob('./notes/*.md')
-        files.append('./index.md')
+        files.append(f"./{INDEX_FNAME}")
         phashes = {}
         for path in files:
             with open(path, 'rb') as f:
@@ -84,7 +85,7 @@ class Builder(object):
         # compile the change/new files
         for path in phashes_diff:
             out_path = f'{BUILD_DIR}{path[1:][:-3]}.html'
-            if path == './index.md':
+            if path == f"./{INDEX_FNAME}":
                 print("INDEX")
                 out_path = f'{BUILD_DIR}/index.html'
                 template_type = 'index'
